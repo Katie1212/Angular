@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="countryApp">
+<head>
+<meta charset="UTF-8">
+<title>W2A2</title>
+
+<!-- Angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"> </script>
+<!-- Controller -->
+<script src="js/country.js"></script>
+<style>
+	body{
+		background-color: #FFF2AA;
+	}
+	h2, th{
+		color:#99CCFF;
+		font-family: fantasy;
+	}
+  table{
+  	border-spacing: 3px;
+  }
+
+</style>
+</head>
+<body>
+<div ng-controller="CountryCtrl">
+
+<!--Sidebar content-->
+<h2>Five Favorite Places</h2>
+Search: <input ng-model="query">
+
+<table>
+   <tr>
+   <br>
+     <th>Place</th>
+	 <th>Country</th> 
+	 </br>
+	</tr>
+	<tr ng-repeat="country in countries | filter:query | orderBy:place">
+	 <td>{{country.name}}</td>
+	 <td>{{country.place}}</td>
+	</tr>
+  </table>
+  </div>
+ </body>
+</html>

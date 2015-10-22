@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="angularclass">
+<head>
+<meta charset="UTF-8">
+<title>Angular.js</title>
+<!-- Angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"> </script>
+<!-- Controller -->
+<script src="js/controllers.js"></script>
+<!-- Bootstrap <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.2/ui-bootstrap-tpls.min.js"></script>-->
+
+</head>
+
+<body>
+<div ng-controller="PhoneListCtrl"><!-- The controller of the div portion. The controller is what gets the scope. -->
+Search:<input ng-model="query" type="text"/>
+	<!-- Full text search -->
+	<p> You are searching for:{{query}}</p> 
+
+
+ 
+ 
+
+      <ul class="phones">
+        <li ng-repeat="phone in phones | filter:query">
+         <span> {{phone.name}}</span>
+          <p>{{phone.snippet}}</p>
+        </li>
+      </ul>
+</div>
+
+
+<!-- second controller -->
+<div ng-controller="HeadingListCtrl">   
+<span> {{heading}}</span>
+</div>
+
+
+
+</body>
+</html>
+
