@@ -3,13 +3,22 @@
 
 var countryApp = angular.module('countryApp', []);
 
-countryApp.controller('CountryCtrl', function ($scope) {
-	$scope.countries = [
-	{'name': 'Punta Cana', 'place': 'Dominican Republic'},
-	{'name': 'Santorini', 'place': 'Greece'},
-    {'name': 'Abu Dhabi', 'place': 'United Arab Emirates'},
-    {'name': 'Florida', 'place': 'United State'},
-    {'name': 'Lauterbrunnen',  'place': 'Switzerland'}
-	];
+countryApp.controller('CountryCtrl', function ($scope, $http) {
+	$http.get('js/favs.json').success(function(data) {
+	$scope.countries = data;
+ });
+
+$scope.orderProp = 'population'; 
+
 });
 
+
+
+
+
+
+
+
+
+
+//Week3 Lecture:  Tutorial / 4 - Two-way Data Binding

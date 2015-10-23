@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Punta Cana",
+    "place": "Dominican Republic",
+    "population": 1
+  },
+  {
+    "name": "Santorini",
+    "place": "Greece",
+    "population": 2
+  },
+  {
+    "name": "Abu Dhabi",
+    "place": "United Arab Emirates",
+    "population": 3
+  },
+  {
+    "name": "Palm Beach",
+    "place": "United State",
+    "population": 4
+  },
+  {
+    "name": "Lauterbrunnen",
+    "place": "Switzerland",
+    "population": 5
+  }
+]

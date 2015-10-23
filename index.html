@@ -28,6 +28,15 @@
 <!--Sidebar content-->
 <h2>Five Favorite Places</h2>
 Search: <input ng-model="query">
+<p> You are searching for:{{query}}</p> 
+
+<select ng-model="orderProp">
+<option value="name">city name</option>
+<option value="place">country</option>
+<option value="population">Population</option>
+</select> 
+
+the list is sorted by {{orderProp}}
 
 <table>
    <tr>
@@ -36,9 +45,10 @@ Search: <input ng-model="query">
 	 <th>Country</th> 
 	 </br>
 	</tr>
-	<tr ng-repeat="country in countries | filter:query | orderBy:place">
+	<tr ng-repeat="country in countries | filter:query | orderBy:orderProp">
 	 <td>{{country.name}}</td>
 	 <td>{{country.place}}</td>
+	 <td>{{country.population}}</td>
 	</tr>
   </table>
   </div>
