@@ -1,56 +1,23 @@
-<!doctype html>
-<html ng-app="countryApp">
-<head>
-<meta charset="UTF-8">
-<title>W2A2</title>
+<!DOCTYPE html>
+<html ng-app="airTravelApp">
+<link rel="stylesheet" type="text/css" href="style.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+ <script src="airportCtl.js"></script>
 
-<!-- Angular -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"> </script>
-<!-- Controller -->
-<script src="js/country.js"></script>
-<style>
-	body{
-		background-color: #FFF2AA;
-	}
-	h2, th{
-		color:#99CCFF;
-		font-family: fantasy;
-	}
-  table{
-  	border-spacing: 3px;
-  }
+<body ng-controller="AirportDelayCtrl">
+<p>Select Airport:</p>
+<select ng-model="selectedCity" ng-options="city.value as city.name for city in cities" ng-change="handleCitySelectionChange()"></select>
 
-</style>
-</head>
-<body>
-<div ng-controller="CountryCtrl">
-
-<!--Sidebar content-->
-<h2>Five Favorite Places</h2>
-Search: <input ng-model="query">
-<p> You are searching for:{{query}}</p> 
-
-<select ng-model="orderProp">
-<option value="name">city name</option>
-<option value="place">country</option>
-<option value="population">Population</option>
-</select> 
-
-the list is sorted by {{orderProp}}
-
-<table>
-   <tr>
-   <br>
-     <th>Place</th>
-	 <th>Country</th> 
-	 </br>
-	</tr>
-	<tr ng-repeat="country in countries | filter:query | orderBy:orderProp">
-	 <td>{{country.name}}</td>
-	 <td>{{country.place}}</td>
-	 <td>{{country.population}}</td>
-	</tr>
-  </table>
-  </div>
- </body>
+  <p>{{cityDelayInfo.IATA}}</p>
+      <p>IACAO: {{cityDelayInfo.ICAO}}</p>
+      <p>IATA: {{cityDelayInfo.city}}</p>
+      <p>Delay: {{cityDelayInfo.delay}}</p>
+      <p>name: {{cityDelayInfo.name}}</p>
+      <p>State: {{cityDelayInfo.state}}</p>
+      <p ng-show="cityDelayInfo.delay">Status: {{cityDelayInfo.status}}</p>
+      <p>Weather: {{cityDelayInfo.weather}} </p>
+      <p>Status: {{cityDelayInfo.status}}</p>
+      <p>Status: {{cityDelayInfo.temp}}</p>{{temp}}
+      
+  </body>
 </html>

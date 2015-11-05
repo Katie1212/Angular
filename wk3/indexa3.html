@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="angularApp">
+<head>
+<meta charset="UTF-8">
+<title>Angular Assignment3</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+<script src="mycontrollers3.js"></script>
+</head>
+
+<body>
+
+
+<div ng-controller="DelayListCtrl">
+
+
+
+Sort by Airport:
+<select ng-model="query">
+<option value="MIA">Miami</option>
+<option value="JFK">New York</option>
+<option value="SFO">San Francisco</option>
+</select>
+ 
+
+<ul>
+    <li ng-repeat="delay in delays | filter:query| orderBy:orderProp">
+      <span>Name: {{delay.name}}</span>
+      <p>CAirport code: {{delay.IATA}}</p>
+      <p>City: {{delay.city}}</p>
+      <p>Delay: {{delay.delay}}</p>
+      <p>Wind: {{delay.temp}}</p>
+      
+    </li>
+</ul>
+
+</div>
+</body>
+</html>

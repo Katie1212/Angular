@@ -1,0 +1,58 @@
+
+<html ng-app="countryApp">
+<head>
+<meta charset="UTF-8">
+<title>W2A2</title>
+
+<!-- Angular -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"> </script>
+<!-- Controller -->
+<script src="../js/country.js"></script>
+<style>
+
+body{
+		background-color: #FFF2AA;
+	}
+h2, th{
+		color:#99CCFF;
+		font-family: fantasy;
+	}
+	
+ table{
+  	border-spacing: 3px;
+  }
+
+</style>
+</head>
+<body>
+<div ng-controller="CountryCtrl">
+
+<!--Sidebar content-->
+<h2>Five Favorite Places</h2>
+Search: <input ng-model="query">
+<p> You are searching for:{{query}}</p> 
+
+<select ng-model="orderProp">
+<option value="name">city name</option>
+<option value="place">country</option>
+<option value="population">Population</option>
+</select> 
+
+the list is sorted by {{orderProp}}
+
+<table>
+   <tr>
+   <br>
+     <th>Place</th>
+	 <th>Country</th> 
+	 </br>
+	</tr>
+	<tr ng-repeat="country in countries | filter:query | orderBy:orderProp">
+	 <td>{{country.name}}</td>
+	 <td>{{country.place}}</td>
+	 <td>{{country.population}}</td>
+	</tr>
+  </table>
+  </div>
+ </body>
+</html>

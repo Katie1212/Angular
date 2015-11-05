@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="airportdelayApp">
+<head>
+<meta charset="UTF-8">
+<title>Angular week 3 project</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+<script src="mycontrollers3.js"></script>
+</head>
+
+<body>
+
+
+<div ng-controller="AirportDelayCtrl">
+
+
+
+Sort by:
+<select ng-model="query">
+<option value="MIA">Miami</option>
+<option value="JFK">New York</option>
+<option value="SFO">San Francisco</option>
+</select>
+ 
+
+<ul>
+    <li ng-repeat="delay in delays | filter:query">
+      <span>Name: {{delay.name}}</span>
+      <p>Delay: {{delay.delay}}</p>
+    </li>
+</ul>
+
+</div>
+</body>
+</html>

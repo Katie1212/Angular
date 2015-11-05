@@ -4,7 +4,7 @@
 var countryApp = angular.module('countryApp', []);
 
 countryApp.controller('CountryCtrl', function ($scope, $http) {
-	$http.get('js/favs.json').success(function(data) {
+	$http.get('../js/favs.json').success(function(data) {
 	$scope.countries = data;
  });
 
