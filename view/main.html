@@ -2,7 +2,8 @@
 <html ng-app="airTravelApp">
 <link rel="stylesheet" type="text/css" href="style.css">
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
- <script src="airportCtl.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
+ <script src="../airportCtl.js"></script>
 
 <body ng-controller="AirportDelayCtrl">
 <p>Select Airport:</p>
@@ -17,7 +18,7 @@
       <p ng-show="cityDelayInfo.delay">Status: {{cityDelayInfo.status}}</p>
       <p>Weather: {{cityDelayInfo.weather}} </p>
       <p>Status: {{cityDelayInfo.status}}</p>
-      <p>Status: {{cityDelayInfo.temp}}</p>{{temp}}
+     
       
   </body>
 </html>

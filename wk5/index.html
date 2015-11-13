@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="airTravelApp">
+<link rel="stylesheet" type="text/css" href="style.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+ <script src="airportCtl.js"></script>
+
+<body ng-controller="AirportDelayCtrl">
+<p>Select Airport:</p>
+<select ng-model="selectedCity" ng-options="city.value as city.name for city in cities" ng-change="handleCitySelectionChange()"></select>
+
+  <p>{{cityDelayInfo.IATA}}</p>
+      <p>IACAO: {{cityDelayInfo.ICAO}}</p>
+      <p>IATA: {{cityDelayInfo.city}}</p>
+      <p>Delay: {{cityDelayInfo.delay}}</p>
+      <p>name: {{cityDelayInfo.name}}</p>
+      <p>State: {{cityDelayInfo.state}}</p>
+      <p ng-show="cityDelayInfo.delay">Status: {{cityDelayInfo.status}}</p>
+      <p>Weather: {{cityDelayInfo.weather}} </p>
+      <p>Status: {{cityDelayInfo.status}}</p>
+     
+      
+  </body>
+</html>
