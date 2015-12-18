@@ -17,9 +17,7 @@
 			width: 16%;
 		}
 
-		li input {
-			width: 100%;
-		}
+		
 
 		.submit {
 			margin: 30px 0;
@@ -33,7 +31,12 @@
      		 background: #9E33F9;
              font-size: 66px;
              color: white;
-		
+		}
+		.btn-block {
+        display: block;
+        /* width: 100%; */
+          }
+
 	</style>
 
 	<script>
@@ -86,7 +89,7 @@
 				}
 
 				else if ( $(".ball2").val() < 1 || $(".ball2").val() > 59 || isNaN(parseInt($('.ball2').val(), 10)) ) {
-					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball');
+					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball. Thank you!');
 					$(".ball1").css('border', '1px solid black');
 					$(".ball2").css('border', '1px solid red');
 					$(".ball3").css('border', '1px solid black');
@@ -96,7 +99,7 @@
 				}
 
 				else if ( $(".ball3").val() < 1 || $(".ball3").val() > 59 || isNaN(parseInt($('.ball3').val(), 10)) ) {
-					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball');
+					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball Thank you!');
 					$(".ball1").css('border', '1px solid black');
 					$(".ball2").css('border', '1px solid black');
 					$(".ball3").css('border', '1px solid red');
@@ -106,7 +109,7 @@
 				}
 
 				else if ( $(".ball4").val() < 1 || $(".ball4").val() > 59 || isNaN(parseInt($('.ball4').val(), 10)) ) {
-					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball');
+					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball Thank you!');
 					$(".ball1").css('border', '1px solid black');
 					$(".ball2").css('border', '1px solid black');
 					$(".ball3").css('border', '1px solid black');
@@ -126,7 +129,7 @@
 				}
 
 				else if ( $(".ball6").val() < 1 || $(".ball6").val() > 35 || isNaN(parseInt($('.ball6').val(), 10)) ) {
-					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball');
+					alert('ERROR: Please submit numbers 1 - 59 or 1-35 for powerball Thank you!');
 					$(".ball1").css('border', '1px solid black');
 					$(".ball2").css('border', '1px solid black');
 					$(".ball3").css('border', '1px solid black');
